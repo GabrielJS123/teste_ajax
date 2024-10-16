@@ -118,7 +118,6 @@ $(document).ready(function () {
 
 
     $(document).on('click','.excluir', function(){
-        alert("sadfkasfkasdoc")
         var confirmado = confirm('Deseja deletar?');
 
         if(confirmado){
