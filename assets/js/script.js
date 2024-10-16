@@ -101,6 +101,7 @@ $(document).ready(function () {
         }).done(function (result) {
             console.log("finalizou");
             console.log(result); // Access the returned message
+            get_comment();
 
         })
         $(".salvar").hide();
@@ -113,10 +114,27 @@ $(document).ready(function () {
 
 
 
-    $(".excluir").on("click", function(){
+    $(document).on('click','.excluir', function(){
+        alert("sadfkasfkasdoc")
         var confirmado = confirm('Deseja deletar?');
+
         if(confirmado){
+            var $bComm = $(this).closest('.b_comm');
+            var commentId = $bComm.find('.id').text();
             alert('Confirmado!');
+            $.ajax({
+                url: 'http://localhost/ajax2/excluir.php', //para onde vai mandar. o local 
+                method: 'POST', //metódo
+                data: {
+                id: commentId //conteúdo
+                },
+                dataType: 'json'
+            }).done(function (result) {
+                console.log("finalizou");
+                console.log(result); // Access the returned message
+                get_comment();
+
+            })
             
         }else{
             alert('Negado!');
