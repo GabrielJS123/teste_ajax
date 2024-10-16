@@ -116,8 +116,8 @@ $(document).ready(function () {
     $(".excluir").on("click", function(){
         var confirmado = confirm('Deseja deletar?');
         if(confirmado){
-            alert('Confirmado!');
-            
+            alert('Confirmado!!');
+
         }else{
             alert('Negado!');
         }
