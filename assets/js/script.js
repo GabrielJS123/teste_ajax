@@ -104,8 +104,11 @@ $(document).ready(function () {
             get_comment();
 
         })
+        var $input = $(this).closest('.b_comm');
+        var input_class = $input.find('input');
+        
         $(".salvar").hide();
-        $('input').prop('readonly', true);
+        input_class.prop('readonly', true);
 
         alert("salvo com sucesso")
 
